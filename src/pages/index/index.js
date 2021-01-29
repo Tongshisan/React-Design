@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-01-28 19:10:37
+ * @LastEditTime: 2021-01-29 09:47:42
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /React-Design/src/pages/index/index.js
+ */
 import * as React from 'react';
 import {observer, inject} from 'mobx-react';
 import {withRouter} from 'react-router-dom';
@@ -6,10 +14,13 @@ import {withRouter} from 'react-router-dom';
 @inject('rootStore')
 @observer
 class Index extends React.Component {
-    constructor() {
+    constructor(props) {
+        super(props);
         this.state = {
             test: '测试'
         }
+
+        this.store = this.props.rootStore.designStore;
     }
 
     btnHandle = () => {
@@ -19,8 +30,11 @@ class Index extends React.Component {
     }
 
     render() {
+        const {name} = this.store;
+        console.log(this.props)
         return (
             <div>
+                <div>{name}</div>
                 <div>{this.state.test}</div>
                 <button onClick={this.btnHandle}></button>
             </div>
