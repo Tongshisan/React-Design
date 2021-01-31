@@ -1,7 +1,7 @@
 /*
  * @Author: lizhi
  * @Date: 2021-01-28 16:18:57
- * @LastEditTime: 2021-01-28 16:27:51
+ * @LastEditTime: 2021-01-29 18:37:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /React-Design/src/router/index.js
@@ -14,6 +14,6 @@ export const routerConfig = [
             () => import('../pages/index')
         ),
         exact: true,
-        children: []
-    }
-]
+        children: [],
+    },
+];
